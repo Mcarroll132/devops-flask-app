@@ -6,8 +6,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
-# "redis-server" is the name of the Redis service in compose.yaml
-r = redis.Redis(host='redis-server', port=6379, decode_responses=True)
+# "the-redis-server" is the name of the Kubernetes Service in redis-service.yaml
+r = redis.Redis(host='the-redis-server', port=6379, decode_responses=True)
 
 # 600 seconds == 10 minutes
 CACHE_SECONDS = 600
